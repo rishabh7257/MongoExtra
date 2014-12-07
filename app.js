@@ -195,7 +195,6 @@ var handle_post = function(req,res){
 app.post("*",handle_post);      
 app.get("*",handle_get);
  
+console.log( "Server running on Port ..." + process.env.PORT ) ;
 
-
-console.log("server running");
-app.listen(8070);
+app.listen( process.env.PORT );
