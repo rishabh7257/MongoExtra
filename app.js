@@ -195,6 +195,6 @@ var handle_post = function(req,res){
 app.post("*",handle_post);      
 app.get("*",handle_get);
  
-console.log( "Server running on Port ..." + process.env.PORT ) ;
-
-app.listen( process.env.PORT );
+http.createServer(app).listen(app.get('port'), app.get('ip_address'),function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
